@@ -1,5 +1,5 @@
 <%@ page import="com.sdatwitter.service.MyTwitterService" %>
-<%@ page import="tweetcom.sdatwitter.model.MyTweet" %>
+<%@ page import="com.sdatwitter.model.MyTweet" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <html>
@@ -12,9 +12,9 @@
 
 <table border="1">
 
-    <th>author</th>
-    <th>message</th>
-    <th>timestamp</th>
+    <th width="150px">author</th>
+    <th width="150px">message</th>
+    <th width="300px">timestamp</th>
 
 <%
 

@@ -1,6 +1,6 @@
 <%@ page import="com.sdatwitter.service.MyTwitterService" %>
 <%@ page import="com.google.common.base.Strings" %>
-<%@ page import="tweetcom.sdatwitter.model.MyTweet" %>
+<%@ page import="com.sdatwitter.model.MyTweet" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <html>
