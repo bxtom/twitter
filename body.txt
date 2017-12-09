@@ -1,0 +1,17 @@
+<%
+    String author = request.getParameter("author");
+    String message = request.getParameter("message");
+
+    if (author == null || message == null) {
+        out.print("Brak autora lub wiadomości.");
+    } else {
+        MyTweet myTweet = new MyTweet(author,message, System.currentTimeMillis());
+        tweets.add(myTweet);
+    }
+
+    for (MyTweet tweet : tweets){
+        out.println("Tweet Author: " + tweet.getAuthor() + "<br>");
+        out.println("Tweet message: " + message + "<br>");
+        out.println("Tweet date: " + tweet.getTimestamp() + "<br><br>");
+    }
+%>
