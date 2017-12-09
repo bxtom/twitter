@@ -1,6 +1,6 @@
 package com.sdatwitter.service;
 
-import tweetcom.sdatwitter.model.MyTweet;
+import com.sdatwitter.model.MyTweet;
 
 import static java.util.Collections.unmodifiableList;
 import java.util.LinkedList;

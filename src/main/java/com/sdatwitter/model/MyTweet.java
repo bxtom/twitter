@@ -1,4 +1,4 @@
-package tweetcom.sdatwitter.model;
+package com.sdatwitter.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

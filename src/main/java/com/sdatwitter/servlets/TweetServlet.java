@@ -1,8 +1,8 @@
-package tweetcom.sdatwitter.servlets;
+package com.sdatwitter.servlets;
 
 import com.google.common.base.Strings;
 import com.sdatwitter.service.MyTwitterService;
-import tweetcom.sdatwitter.model.MyTweet;
+import com.sdatwitter.model.MyTweet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
