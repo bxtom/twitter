@@ -1,6 +1,3 @@
-<%@ page import="com.sdatwitter.service.MyTwitterService" %>
-<%@ page import="com.google.common.base.Strings" %>
-<%@ page import="com.sdatwitter.model.MyTweet" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <html>
@@ -16,9 +13,9 @@
     String author = "";
 
     Cookie[] cookies = request.getCookies();
-    if(cookies !=null){
-        for(Cookie cookie : cookies){
-            if(cookie.getName().equals("author")) author = cookie.getValue();
+    if (cookies != null) {
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("author")) author = cookie.getValue();
         }
     }
 
