@@ -6,6 +6,7 @@ import com.sdatwitter.model.MyTweet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -42,6 +43,11 @@ public class TweetServlet extends HttpServlet {
             MyTwitterService service =  MyTwitterService.getInstance();
             MyTweet myTweet = new MyTweet(author,message, System.currentTimeMillis());
             service.addTweet(myTweet);
+
+            Cookie authorCookie = new Cookie("author", author);
+            authorCookie.setMaxAge(30*60);
+            resp.addCookie(authorCookie);
+
             writer.append("	Dodano tweet\r\n");
 
             resp.sendRedirect("/index.jsp");
