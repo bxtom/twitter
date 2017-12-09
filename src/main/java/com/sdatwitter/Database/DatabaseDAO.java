@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class DatabaseDAO {
-    private static void addTweet(MyTweet tweet) {
+    public static void addTweet(MyTweet tweet) {
         Connection conn = null;
         Statement stmt = null;
         try {
@@ -34,7 +34,7 @@ public class DatabaseDAO {
         System.out.println("Goodbye!");
     }
 
-    private static List<MyTweet> getTweetList() {
+    public static List<MyTweet> getTweetList() {
         Connection conn = null;
         Statement stmt = null;
 
