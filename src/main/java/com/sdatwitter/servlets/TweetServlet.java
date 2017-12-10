@@ -1,6 +1,7 @@
 package com.sdatwitter.servlets;
 
 import com.google.common.base.Strings;
+import com.sdatwitter.Database.DatabaseDAO;
 import com.sdatwitter.service.MyTwitterService;
 import com.sdatwitter.model.MyTweet;
 
@@ -42,7 +43,8 @@ public class TweetServlet extends HttpServlet {
         } else {
             MyTwitterService service =  MyTwitterService.getInstance();
             MyTweet myTweet = new MyTweet(author,message, System.currentTimeMillis());
-            service.addTweet(myTweet);
+            //service.addTweet(myTweet);
+            DatabaseDAO.addTweet(myTweet);
 
             Cookie authorCookie = new Cookie("author", author);
             authorCookie.setMaxAge(30*60);
