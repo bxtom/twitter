@@ -1,5 +1,6 @@
 <%@ page import="com.sdatwitter.service.MyTwitterService" %>
 <%@ page import="com.sdatwitter.model.MyTweet" %>
+<%@ page import="com.sdatwitter.Database.DatabaseDAO" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <html>
@@ -14,11 +15,12 @@
 
     <th width="150px">author</th>
     <th width="150px">message</th>
-    <th width="300px">timestamp</th>
+    <th width="150px">timestamp</th>
 
 <%
 
-    for (MyTweet tweet : service.getTweetList()){
+    //for (MyTweet tweet : service.getTweetList()){
+    for (MyTweet tweet : DatabaseDAO.getTweetList()){
         out.println("<tr>");
         out.println("<td>" + tweet.getAuthor() + "</td>");
         out.println("<td>" + tweet.getTweet() + "</td>");
