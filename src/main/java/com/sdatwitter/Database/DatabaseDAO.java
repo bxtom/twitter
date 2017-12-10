@@ -20,13 +20,15 @@ public class DatabaseDAO {
             stmt = conn.createStatement();
 
             String sql = "INSERT INTO tweets (author, message, timestamp) " +
-                    "VALUES ('" + tweet.getAuthor() + "', '" + tweet.getTweet() + "', " + tweet.getTimestamp() + ")";
+                    "VALUES ('" + tweet.getAuthor() + "', '" + tweet.getTweet() + "', '" + tweet.getTimestamp() + "');";
+
+            System.out.println(sql);
 
             int result = stmt.executeUpdate(sql);
             System.out.println("Result: " + result);
 
-            stmt.close();
-            conn.close();
+            //stmt.close();
+            //conn.close();
         } catch (Exception e) {
             //Handle errors for Class.forName
             e.printStackTrace();
@@ -49,14 +51,23 @@ public class DatabaseDAO {
 
             String sql = "SELECT * FROM tweets";
             ResultSet rs = stmt.executeQuery(sql);
+
+            rs.last();
+            int total = rs.getRow();
+            System.out.println("results count: " + total);
+            rs.beforeFirst();
+
             //STEP 5: Extract data from result set
             while (rs.next()) {
                 //Retrieve by column name
                 MyTweet tweet = new MyTweet(rs.getString("author"),
                         rs.getString("message"),
                         rs.getLong("timestamp"));
+                myTweetList.add(tweet);
             }
             //STEP 6: Clean-up environment
+            //stmt.close();
+            //conn.close();
 
         } catch (Exception e) {
             //Handle errors for Class.forName
